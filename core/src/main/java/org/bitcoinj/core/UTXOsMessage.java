@@ -116,7 +116,7 @@ public class UTXOsMessage extends Message {
         for (int i = 0; i < numOuts; i++) {
             long version = readUint32();
             long height = readUint32();
-            if (version > 1)
+            if (version > 2)
                 throw new ProtocolException("Unknown tx version in getutxo output: " + version);
             TransactionOutput output = new TransactionOutput(params, null, payload, cursor);
             outputs.add(output);
